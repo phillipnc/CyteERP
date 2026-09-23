@@ -43,6 +43,17 @@ Country packs are responsible for extracting the correct Salary Slip values and
 applying local statutory rules. The shared builders keep the report columns and
 totals consistent across countries.
 
+After app installation and migration, the following standard Script Reports are
+available against submitted Salary Slips:
+
+- **Africa Medical Aid and Pension**
+- **Africa Company Contributions**
+
+The default Salary Slip adapter recognises common medical-aid, health-insurance,
+pension, social-security, workers-compensation and employer-levy component
+names. Explicit custom fields take precedence. Production country packs should
+define and test their approved component mappings.
+
 ## Install
 
 ```bash
