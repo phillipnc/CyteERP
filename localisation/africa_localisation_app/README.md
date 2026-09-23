@@ -8,6 +8,10 @@ This app is designed for all 54 African countries. It provides:
   localisation readiness.
 - Stable interfaces for VAT/GST, withholding tax, payroll deductions and
   statutory reporting.
+- Shared medical-aid and pension schedules, including employee and employer
+  amounts.
+- Shared company-contributions schedule including employer medical aid and
+  employer pension.
 - Version-aware helpers for ERPNext/Frappe v15 and v16.
 - A country readiness matrix so incomplete or unverified regulations are visible
   instead of silently treated as production-ready.
@@ -23,6 +27,21 @@ professional before production use.
 The existing CyteERP Zimbabwe payroll package in this workspace can be connected
 as the first production country pack. The other countries start as explicit,
 testable pack contracts rather than undocumented hard-coded assumptions.
+
+## Shared payroll reports included
+
+The shared report builders are in `africa_localisation.reports` and expose:
+
+- `medical_aid_pension`: employee medical aid, employer medical aid, employee
+  pension, employer pension, medical total, pension total and total
+  contributions.
+- `company_contributions`: employer social security/NSSA, employer pension,
+  employer medical aid, APWCS/WCIF, employer withholding, other employer levies
+  and total company contributions.
+
+Country packs are responsible for extracting the correct Salary Slip values and
+applying local statutory rules. The shared builders keep the report columns and
+totals consistent across countries.
 
 ## Install
 
@@ -50,4 +69,3 @@ Each country moves through:
 Zimbabwe, Zambia, Malawi, Tanzania and Kenya are the first integration wave
 because the current CyteERP work already has Zimbabwe payroll/reporting assets
 and these markets have clear electronic invoicing/fiscalisation interfaces.
-

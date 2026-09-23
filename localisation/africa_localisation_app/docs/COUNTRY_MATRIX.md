@@ -22,6 +22,8 @@ verified against current official material.
 - E-invoicing or fiscalisation adapter where applicable.
 - Payroll fixtures covering ordinary pay, benefits, bonuses, deductions,
   employer contributions and year-end adjustments.
+- Medical-aid and pension schedules covering employee and employer amounts.
+- Company-contributions schedule covering employer pension and employer medical
+  aid alongside country-specific social-security and levy fields.
 - Reconciliation tests against an approved reference workbook or return.
 - Local tax review and a signed production-readiness record.
-
