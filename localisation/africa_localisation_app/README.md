@@ -12,6 +12,8 @@ This app is designed for all 54 African countries. It provides:
   amounts.
 - Shared company-contributions schedule including employer medical aid and
   employer pension.
+- Country-linked bank master data and bank-code validation for SWIFT/BIC,
+  national clearing, branch, tax-payment and payroll-payment codes.
 - Version-aware helpers for ERPNext/Frappe v15 and v16.
 - A country readiness matrix so incomplete or unverified regulations are visible
   instead of silently treated as production-ready.
@@ -53,6 +55,17 @@ The default Salary Slip adapter recognises common medical-aid, health-insurance,
 pension, social-security, workers-compensation and employer-levy component
 names. Explicit custom fields take precedence. Production country packs should
 define and test their approved component mappings.
+
+## Banks and bank codes
+
+The app includes `Africa Bank` and `Africa Bank Code` DocTypes. A bank record
+stores the ISO country code, currency, primary bank code, optional SWIFT/BIC,
+official source reference and additional branch, clearing and payment codes.
+
+The registry in `africa_localisation.config.banks` validates code shape and
+country/currency consistency. It intentionally does not invent bank-directory
+values: each country pack should load current official central-bank, clearing
+house or payment-network data and retain its source.
 
 ## Install
 

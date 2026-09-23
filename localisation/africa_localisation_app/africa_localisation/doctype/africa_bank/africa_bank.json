@@ -1,0 +1,90 @@
+{
+  "doctype": "DocType",
+  "name": "Africa Bank",
+  "module": "Africa Localisation",
+  "autoname": "BANK-.#####",
+  "allow_rename": 1,
+  "track_changes": 1,
+  "field_order": [
+    "bank_name",
+    "country_code",
+    "currency",
+    "bank_code",
+    "swift_bic",
+    "active",
+    "source",
+    "bank_codes"
+  ],
+  "fields": [
+    {
+      "fieldname": "bank_name",
+      "fieldtype": "Data",
+      "label": "Bank Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "country_code",
+      "fieldtype": "Data",
+      "label": "Country Code",
+      "description": "ISO alpha-2 code, for example ZW, ZM or KE.",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "options": "Currency",
+      "label": "Currency",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "bank_code",
+      "fieldtype": "Data",
+      "label": "Primary Bank Code",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "swift_bic",
+      "fieldtype": "Data",
+      "label": "SWIFT/BIC",
+      "description": "8 or 11 character BIC where available."
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": "1",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "source",
+      "fieldtype": "Small Text",
+      "label": "Official Source",
+      "description": "URL or publication reference for the bank directory record."
+    },
+    {
+      "fieldname": "bank_codes",
+      "fieldtype": "Table",
+      "label": "Bank Codes",
+      "options": "Africa Bank Code"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "print": 1
+    }
+  ]
+}
+

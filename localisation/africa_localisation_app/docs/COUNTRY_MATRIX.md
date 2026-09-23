@@ -25,5 +25,7 @@ verified against current official material.
 - Medical-aid and pension schedules covering employee and employer amounts.
 - Company-contributions schedule covering employer pension and employer medical
   aid alongside country-specific social-security and levy fields.
+- Official bank directory and code data, including source references and
+  effective dates where the country requires local clearing or payroll codes.
 - Reconciliation tests against an approved reference workbook or return.
 - Local tax review and a signed production-readiness record.
