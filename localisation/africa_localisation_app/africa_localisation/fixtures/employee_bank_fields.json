@@ -1,0 +1,56 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "custom_africa_bank",
+    "fieldtype": "Link",
+    "label": "Africa Bank",
+    "options": "Africa Bank",
+    "insert_after": "bank_name",
+    "depends_on": "eval:doc.salary_mode == 'Bank'",
+    "in_list_view": 0
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "custom_africa_bank_code_type",
+    "fieldtype": "Select",
+    "label": "Africa Bank Code Type",
+    "options": "SWIFT/BIC\nNational Clearing\nBranch\nTax Payment\nPayroll Payment\nOther",
+    "insert_after": "custom_africa_bank",
+    "depends_on": "eval:doc.salary_mode == 'Bank' && doc.custom_africa_bank",
+    "in_list_view": 0
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "custom_africa_bank_code",
+    "fieldtype": "Data",
+    "label": "Africa Bank Code",
+    "insert_after": "custom_africa_bank_code_type",
+    "depends_on": "eval:doc.salary_mode == 'Bank' && doc.custom_africa_bank",
+    "in_list_view": 0
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "custom_africa_bank_branch",
+    "fieldtype": "Data",
+    "label": "Africa Bank Branch",
+    "insert_after": "custom_africa_bank_code",
+    "depends_on": "eval:doc.salary_mode == 'Bank' && doc.custom_africa_bank",
+    "in_list_view": 0
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "custom_africa_bank_currency",
+    "fieldtype": "Link",
+    "label": "Africa Bank Currency",
+    "options": "Currency",
+    "insert_after": "custom_africa_bank_branch",
+    "read_only": 1,
+    "depends_on": "eval:doc.custom_africa_bank",
+    "in_list_view": 0
+  }
+]

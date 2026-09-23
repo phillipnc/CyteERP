@@ -14,6 +14,8 @@ This app is designed for all 54 African countries. It provides:
   employer pension.
 - Country-linked bank master data and bank-code validation for SWIFT/BIC,
   national clearing, branch, tax-payment and payroll-payment codes.
+- ERPNext Employee integration through optional Africa Bank, bank-code,
+  branch and currency fields.
 - Version-aware helpers for ERPNext/Frappe v15 and v16.
 - A country readiness matrix so incomplete or unverified regulations are visible
   instead of silently treated as production-ready.
@@ -66,6 +68,12 @@ The registry in `africa_localisation.config.banks` validates code shape and
 country/currency consistency. It intentionally does not invent bank-directory
 values: each country pack should load current official central-bank, clearing
 house or payment-network data and retain its source.
+
+ERPNext v15/v16 stores the primary employee payment account on `Employee`.
+After migration, the app adds optional fields for `Africa Bank`, bank-code type,
+bank code, branch and derived bank currency. Saving an employee validates the
+linked bank, normalises the code and keeps the native `bank_name` available for
+ERPNext payroll and bank-remittance consumers.
 
 ## Install
 
